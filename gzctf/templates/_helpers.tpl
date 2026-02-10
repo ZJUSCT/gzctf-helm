@@ -102,7 +102,7 @@ Storage connection string (MinIO/S3)
 {{- if .Values.gzctf.config.storage.connectionString -}}
 {{- .Values.gzctf.config.storage.connectionString -}}
 {{- else if and .Values.gzctf.config.storage.enabled .Values.minio.enabled -}}
-{{- printf "minio.s3://serviceUrl=%s-minio:9000;accessKey=%s;secretKey=%s;bucket=%s;region=us-east-1;forcePathStyle=true" .Release.Name .Values.minio.rootUser .Values.minio.rootPassword (index .Values.minio.buckets 0).name -}}
+{{- printf "minio.s3://serviceUrl=http://%s-minio:9000;keyId=%s;key=%s;bucket=%s;forcePathStyle=true" .Release.Name .Values.minio.rootUser .Values.minio.rootPassword (index .Values.minio.buckets 0).name -}}
 {{- else -}}
 {{- "" -}}
 {{- end -}}
