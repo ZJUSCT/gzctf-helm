@@ -68,12 +68,12 @@ data:
       },
       "Kestrel": {
         "Limits": {
-          "MaxResponseBufferSize": {{ .Values.gzctf.config.kestrel.limits.maxResponseBufferSize | int }},
-          "MaxRequestBufferSize": {{ .Values.gzctf.config.kestrel.limits.maxRequestBufferSize | int }},
-          "MaxRequestLineSize": {{ .Values.gzctf.config.kestrel.limits.maxRequestLineSize | int }},
-          "MaxRequestHeadersTotalSize": {{ .Values.gzctf.config.kestrel.limits.maxRequestHeadersTotalSize | int }},
-          "MaxRequestHeaderCount": {{ .Values.gzctf.config.kestrel.limits.maxRequestHeaderCount | int }},
-          "MaxRequestBodySize": {{ .Values.gzctf.config.kestrel.limits.maxRequestBodySize | int }}
+          "MaxResponseBufferSize": {{ int .Values.gzctf.config.kestrel.limits.maxResponseBufferSize }},
+          "MaxRequestBufferSize": {{ int .Values.gzctf.config.kestrel.limits.maxRequestBufferSize }},
+          "MaxRequestLineSize": {{ int .Values.gzctf.config.kestrel.limits.maxRequestLineSize }},
+          "MaxRequestHeadersTotalSize": {{ int .Values.gzctf.config.kestrel.limits.maxRequestHeadersTotalSize }},
+          "MaxRequestHeaderCount": {{ int .Values.gzctf.config.kestrel.limits.maxRequestHeaderCount }},
+          "MaxRequestBodySize": {{ int .Values.gzctf.config.kestrel.limits.maxRequestBodySize }}
         }
       }
     }
