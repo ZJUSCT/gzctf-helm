@@ -537,21 +537,10 @@ postgresql:
 
 # PostgreSQL High Availability Configuration
 # Bitnami PostgreSQL HA chart with replication manager
+# NOTE: Secrets are managed via SealedSecrets in the main repo, not by this chart
 postgresql-ha:
   # -- Enable or disable PostgreSQL HA deployment (THIS USES BITNAMI LEGACY IMAGES BY DEFAULT WHICH NO LONGER RECIEVE RPOPER SECURITY UPDATES)
   enabled: false
-
-  # -- Secret configuration for PostgreSQL HA passwords
-  secret:
-    # -- Create secrets for PostgreSQL HA (set to false to use existing secrets)
-    create: true
-    # -- PostgreSQL password (if not set, a random password will be generated)
-    # IMPORTANT: Leave empty on first install to auto-generate, then create a SealedSecret
-    postgresPassword: ""
-    # -- Replication manager password (if not set, a random password will be generated)
-    repmgrPassword: ""
-    # -- Pgpool admin password (if not set, a random password will be generated)
-    pgpoolAdminPassword: ""
 
   postgresql:
     # Container image configuration
